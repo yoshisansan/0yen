@@ -5,9 +5,11 @@ import Profile from './profile';
 const title = ''
 
 const Sidebar = () => {
-  <div>
-    <Header />
-    <Profile />
-  </div>
+  return (
+    <div>
+      <Header />
+      <Profile />
+    </div>
+  )
 };
 export default Sidebar;

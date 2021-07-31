@@ -1,8 +1,11 @@
-import Heads from './util/heads';
+import Heads from './util/heads'
 import Image from 'next/image'
 import styles from './layout.module.css'
 import utilStyles from 'styles/utils.module.css'
 import Link from 'next/link'
+import Sidebar from 'components/parts/sidebar'
+import { Box } from "@chakra-ui/react"
+import { PhoneIcon } from "@chakra-ui/icons"
 
 const name = 'あきふみ'
 export const siteTitle = '野良開発のススメ | 最小コストで独学Webサービス開発'
@@ -14,15 +17,18 @@ const Layout = ({ children, home }) => {
       <header className={styles.header}>
         {home ? (
           <>
-            <Image
+            {/* <Image
               priority
-              src="/images/profile.jpg"
+              src="/images/profile.png"
               className={utilStyles.borderCircle}
               height={144}
               width={144}
               alt={name}
-            />
+            /> */}
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <Sidebar />
+            {/* <PhoneIcon />
+            <Box p={4} bg={"red.100"} letterSpacing="1.5em">Chakraテスト</Box> */}
           </>
         ) : (
           <>
