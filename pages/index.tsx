@@ -9,6 +9,7 @@ import Date from 'components/date'
 import { GetStaticProps } from 'next'
 import { Box } from '@chakra-ui/react'
 import debug from 'debug'
+import dayjs from 'dayjs'
 
 const lg = debug('log')
 
@@ -26,7 +27,7 @@ const Home: FC<{allPostsData: any}> = ({ allPostsData, microCMS }) => {
             <img src={url} alt="サムネイル" />
           </Link>
           <div>
-            <p>{time}</p>
+            <p>{dayjs(time).format('YYYY年MM月DD日')}</p>
             <h1>{title}</h1>
           </div>
           {/* <p>{description}</p> */}
