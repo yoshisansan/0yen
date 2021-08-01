@@ -18,7 +18,8 @@ const theme = extendTheme({
     xmini: '0.7em',
     mini: '0.8em',
     base: '16px',
-    big: '22.6274169968px',
+    big: '1.4142135623em',
+    bigX: '1.6180339887em',
   },
   borders: {
     main: "1px solid #DEDCDB"
@@ -38,6 +39,24 @@ const theme = extendTheme({
       a: {
         color: "brand.main",
       },
+      h1: {
+        color: "moji.main",
+        fontSize: "bigX",
+        fontWeight: "bold",
+        padding: "0.7071067812em 0em",
+      },
+      h2: {
+        color: "brand.main",
+        fontSize: "big",
+        fontWeight: "bold",
+        padding: "0.7071067812em 0em",
+      },
+      h3: {
+        color: "moji.main",
+        fontSize: "bigX",
+        fontWeight: "bold",
+        padding: "0.7071067812em 0em",
+      }
     }
   }
 })
@@ -45,7 +64,9 @@ const theme = extendTheme({
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <ChakraProvider theme={theme}><Component {...pageProps} /></ChakraProvider>
+      <ChakraProvider theme={theme}>
+        <Component {...pageProps} />
+      </ChakraProvider>
     </>
   );
 }

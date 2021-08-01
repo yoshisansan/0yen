@@ -50,7 +50,9 @@ const Layout = ({ children, home }) => {
         )}
       </header>
       <Grid gridTemplateColumns="320px 1fr" >
-        <Sidebar />
+        <div>
+          <Sidebar />
+        </div>
         <main>{children}</main>
       </Grid>
       {!home && (
