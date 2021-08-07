@@ -17,7 +17,7 @@ const siteTitle = '野良開発のススメ | 最小コストで独学Webサー�
 
 const Profile = () => {
   return (
-  <Box p="16px" bg="#fff"boxShadow="0px 0px 3px 2px #eee" fontSize="14px" alignItems="center" m="auto">
+  <Box maxW="320px" m="0 auto" p="16px" bg="#fff"boxShadow="0px 0px 3px 2px #eee" fontSize="14px" alignItems="center" m="auto">
     <Box textAlign="center">
       <Image
         priority
@@ -28,7 +28,7 @@ const Profile = () => {
         alt={name}
       />
     </Box>
-    <Box>
+    <Box m="0 auto">
       <div>
         <Text textAlign="center" color="moji.sub">プロフィール</Text>
         <Text m="16px 0">Webサービスを作りたくて独学でフロントエンド開発に集中して２年（事業を目指している）<Text as="span" mt="12px" display="block">必要なスキルを逆算しながら欲しい栄養素が100gでわかる100g.jpを開発＆運営中</Text><Text as="span" mt="12px" display="block">Qiitaで技術記事書いています</Text></Text>
@@ -38,4 +38,5 @@ const Profile = () => {
   </Box>
   );
 };
+
 export default Profile;

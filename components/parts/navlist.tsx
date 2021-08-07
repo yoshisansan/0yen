@@ -15,6 +15,13 @@ const titleArr = ['お金をかけずに独学でプログラミングを覚え�
 
 const NavList = () => {
   const { microCMSdata } = useContext(MicroCMS);
+  console.log(microCMSdata)
+  const parentData = microCMSdata.filter(item => item.parent === true);
+  const childData = parentData.map(({genre}) => {
+    return microCMSdata.filter((data) => data.genre === genre);
+  });
+  console.log(parentData,childData);
+
   const menuData = microCMSdata.map(({ id, title, slug, genre }) => {
     return {
       id,
@@ -24,18 +31,18 @@ const NavList = () => {
     }
   });
   return (
-    <Accordion>
+    <Accordion defaultIndex={[0]} allowMultiple>
           {menuData.map((menu, index) => {
             return (
               <AccordionItem p={4} key={index}>
-                <p>
+                <div>
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
                     {menu.title}
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
-                </p>
+                </div>
                 <AccordionPanel pb={4}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -45,7 +52,6 @@ const NavList = () => {
               </AccordionItem>
             )
           })}
-      
 
       {/* <AccordionItem>
         <h2>

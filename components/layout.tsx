@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Heads from './util/heads'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -20,25 +21,46 @@ export const siteTitle = '野良開発のススメ | 最小コストで独学Web
 
 const Layout = ({ children }) => {
   // const { data, error } = useSWR('', fetcher)
-  const [isLargerThan880] = useMediaQuery("(min-width: 880px)")
+  const [isThan880, setIsThan880] = useState(false)
+  const [mq] = useMediaQuery("(min-width: 880px)")
+  useEffect(() => {
+    if(mq !== isThan880) {
+      setIsThan880(mq);
+    }
+  },[mq]);
+
+
   return (
-    <Box m="auto" w="100%">
+    <Box m='auto' mt={isThan880 ? '0px' : '80px'} w="100%">
       <Heads />
-      { isLargerThan880 ? (
-      <Grid gridTemplateColumns="320px 1fr" >
-        <div>
-          <Sidebar />
-        </div>
-        <Box p="0 16px">{children}</Box>
-      </Grid>
-      ) : (
-      <Flex flexDirection="column" justifyContent="center">
-        <HeaderResponsive />
-        <Box p="0 16px">{children}</Box>
-      </Flex>
-      )
+      { isThan880 &&
+        (
+          <Grid gridTemplateColumns="320px 1fr" >
+            <div>
+              <Sidebar />
+            </div>
+            <Box p="0 16px">{children}</Box>
+        </Grid>
+        )
+      }
+      { !isThan880 &&
+        (
+          <Flex flexDirection="column" justifyContent="center">
+            <HeaderResponsive />
+            <Box p="0 16px">{children}</Box>
+          </Flex>
+        )
       }
     </Box>
+    // <Box m='auto' w="100%">
+    //   <Heads />
+    //   <Grid gridTemplateColumns="320px 1fr" >
+    //     <div>
+    //       <Sidebar />
+    //     </div>
+    //     <Box p="0 16px">{children}</Box>
+    //   </Grid>
+    // </Box>
   )
 }
 export default Layout;
