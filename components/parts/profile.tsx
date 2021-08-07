@@ -17,7 +17,7 @@ const siteTitle = '野良開発のススメ | 最小コストで独学Webサー�
 
 const Profile = () => {
   return (
-  <Box alignItems="center" m="auto">
+  <Box p="16px" bg="#fff"boxShadow="0px 0px 3px 2px #eee" fontSize="14px" alignItems="center" m="auto">
     <Box textAlign="center">
       <Image
         priority

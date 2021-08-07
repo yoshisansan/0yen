@@ -1,67 +1,43 @@
 import Heads from './util/heads'
 import Image from 'next/image'
-import styles from './layout.module.css'
 import Link from 'next/link'
 import Sidebar from 'components/parts/sidebar'
-import { Box, Flex, Grid } from "@chakra-ui/react"
+import { Box, Flex, Grid, useMediaQuery } from "@chakra-ui/react"
+import HeaderResponsive from 'components/parts/headerResopnsive'
 import { PhoneIcon } from "@chakra-ui/icons"
+import { client } from 'lib/clients'
+import useSWR from 'swr'
+import microCMS from 'data/microcms.json'
+import debug from 'debug'
 
+
+const lg = debug('log');
 const name = 'あきふみ'
 export const siteTitle = '野良開発のススメ | 最小コストで独学Webサービス開発'
 
-const Layout = ({ children, home }) => {
+// const fetcher = (url) => fetch(client).then((res) => res.json())
+// const fetcher = () => client.get({ endpoint: "0yen" }).then((res) => res);
+
+const Layout = ({ children }) => {
+  // const { data, error } = useSWR('', fetcher)
+  const [isLargerThan880] = useMediaQuery("(min-width: 880px)")
   return (
     <Box m="auto" w="100%">
       <Heads />
-      <header>
-        {home ? (
-          <>
-            {/* <Image
-              priority
-              src="/images/profile.png"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            /> */}
-            {/* <h1>{name}</h1> */}
-            {/* <PhoneIcon />
-            <Box p={4} bg={"red.100"} letterSpacing="1.5em">Chakraテスト</Box> */}
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src="/images/profile.jpg"
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2>
-              <Link href="/">
-                <a>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
-      </header>
+      { isLargerThan880 ? (
       <Grid gridTemplateColumns="320px 1fr" >
         <div>
           <Sidebar />
         </div>
-        <main>{children}</main>
+        <Box p="0 16px">{children}</Box>
       </Grid>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
+      ) : (
+      <Flex flexDirection="column" justifyContent="center">
+        <HeaderResponsive />
+        <Box p="0 16px">{children}</Box>
+      </Flex>
+      )
+      }
     </Box>
   )
 }
