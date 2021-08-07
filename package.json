@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "DEBUG=log next dev",
+    "dev": "node ./data/create/createCMSdata.js && DEBUG=log next dev",
     "build": "next build",
     "start": "next start"
   },
@@ -15,15 +15,19 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "axios": "^0.21.1",
     "date-fns": "^2.11.1",
     "dayjs": "^1.10.6",
+    "dotenv": "^10.0.0",
     "framer-motion": "^4",
+    "fs": "^0.0.1-security",
     "gray-matter": "^4.0.2",
     "next": "^11.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "remark": "^12.0.0",
-    "remark-html": "^12.0.0"
+    "remark-html": "^12.0.0",
+    "swr": "^0.5.6"
   },
   "devDependencies": {
     "@types/node": "^16.4.8",

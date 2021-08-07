@@ -1,5 +1,5 @@
 import { Box, Text, Flex } from '@chakra-ui/react'
-
+import Image from 'next/image'
 
 // ダミーデータ
 const name = 'あきふみ';
@@ -10,7 +10,8 @@ const Header = () => {
   return (
     <Flex justifyContent="center">
       <Box borderBottom="main" w="288px" p="8px 0">
-        <Text fontSize="big">{siteTitle}<Text as="span" fontSize="12px" display="block">{subTitle}</Text></Text>
+        <Text fontSize="big" bg="brand.main" display="inline" p="0 8px">{siteTitle}</Text>
+        <Text as="span" fontSize="12px" display="block">{subTitle}</Text>
       </Box>
     </Flex>
   );
