@@ -44,7 +44,7 @@ const HamburgerMenu = () => {
           <ModalHeader>野良開発のススメ</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <NavList />
+            <NavList onClose={onClose} isHamburger="true" />
             <Box mt="24px">
               <Profile />
             </Box>

@@ -16,7 +16,6 @@ const Home: FC<{allPostsData: any, data: any}> = ({ data }) => {
     const { id, title, slug, thumbnail, description, time, body } = data;
     return (
       <div key={id}>
-        <div>パンクズ</div>
         <div>
         {thumbnail &&
           <Link href={slug}>

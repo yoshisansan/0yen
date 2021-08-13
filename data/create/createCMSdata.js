@@ -28,7 +28,7 @@ const getMicroCMSdata = async() => {
 const createJSONdata = async() => {
   const contents = await getMicroCMSdata();
   const JSONdata = JSON.stringify(contents, null, 2);
-  fs.writeFileSync('../microcms.json', JSONdata);
+  await fs.writeFileSync('data/microcms.json', JSONdata);
 }
 
 createJSONdata();

@@ -3,8 +3,9 @@ import Heads from './util/heads'
 import Image from 'next/image'
 import Link from 'next/link'
 import Sidebar from 'components/parts/sidebar'
-import { Box, Flex, Grid, useMediaQuery } from "@chakra-ui/react"
 import HeaderResponsive from 'components/parts/headerResopnsive'
+import Footer from 'components/parts/footer'
+import { Box, Flex, Grid, useMediaQuery } from "@chakra-ui/react"
 import { PhoneIcon } from "@chakra-ui/icons"
 import { client } from 'lib/clients'
 import useSWR from 'swr'
@@ -40,7 +41,7 @@ const Layout = ({ children }) => {
               <Sidebar />
             </div>
             <Box p="0 16px">{children}</Box>
-        </Grid>
+          </Grid>
         )
       }
       { !isThan880 &&
@@ -51,6 +52,7 @@ const Layout = ({ children }) => {
           </Flex>
         )
       }
+      <Footer />
     </Box>
     // <Box m='auto' w="100%">
     //   <Heads />
