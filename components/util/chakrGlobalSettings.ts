@@ -38,6 +38,7 @@ export const chakraGlobalTheme = extendTheme({
       },
       a: {
         color: "brand.main",
+        display: "inline",
       },
       h1: {
         color: "moji.main",

@@ -24,7 +24,7 @@ const NavList = ({onClose, isHamburger}) => {
   const { query: { slug }, asPath } = useRouter();
   const { microCMSdata } = useContext(MicroCMS);
 
-  const parentData = microCMSdata.filter(item => item.isParent === true);
+  const parentData = microCMSdata.filter(item => item.isParent === true).sort((a, b) => a.time > b.time ? 1 : -1);
   const accordData = parentData.map((parentData) => {
     const genre = parentData.genre[0];
     const childData = microCMSdata.filter((data) => data.genre[0] === genre);

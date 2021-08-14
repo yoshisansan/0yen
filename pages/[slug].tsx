@@ -2,18 +2,20 @@
 import Layout from 'components/layout'
 import Head from 'next/head'
 import dayjs from 'dayjs'
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
 import { css } from '@emotion/react'
 import microCMS from 'data/microcms.json'
 import SocialBtn from 'components/parts/socialBtn'
 import Link from 'next/link'
+import NextPrev from 'components/parts/nextPrev'
 
 const paddingTop = css`
   padding-top: 8px;
 `;
 
+
 const Post = ({ postData }) => {
-  const {id, thumbnail, time, title, body } = postData;
+  const {id, thumbnail, time, title, body, nextSlug, beforeSlug } = postData;
   return (
     <Layout>
       <Box maxW="620px" m="auto">
@@ -30,6 +32,7 @@ const Post = ({ postData }) => {
             <SocialBtn title={title}/>
           </Flex>
           <Box pt="24px" dangerouslySetInnerHTML={{ __html: body }} />
+          <NextPrev nextSlug={nextSlug} beforeSlug={beforeSlug}/>
           <Flex w="240px" mt="32px" align="center" justify="space-between">
             <SocialBtn title={title} />
           </Flex>
