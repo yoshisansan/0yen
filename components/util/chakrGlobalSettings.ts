@@ -1,5 +1,6 @@
 import { extendTheme } from "@chakra-ui/react"
 
+const mq = `@media screen and (min-width: 480px)`;
 export const chakraGlobalTheme = extendTheme({
   colors: {
     moji: {
@@ -42,9 +43,12 @@ export const chakraGlobalTheme = extendTheme({
       },
       h1: {
         color: "moji.main",
-        fontSize: "bigX",
+        fontSize: "big",
         fontWeight: "bold",
         padding: "0.7071067812em 0em",
+        [mq]: {
+          fontSize: "bigX",
+        }
       },
       h2: {
         color: "brand.main",

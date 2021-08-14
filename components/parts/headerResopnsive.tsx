@@ -41,4 +41,5 @@ const HeaderResponsive = () => {
     </Box>
   );
 };
+
 export default HeaderResponsive;
