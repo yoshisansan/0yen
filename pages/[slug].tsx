@@ -1,12 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import Layout from 'components/layout'
-import Head from 'next/head'
+import SEO from 'components/util/seo'
 import dayjs from 'dayjs'
 import { Box, Flex, Text } from '@chakra-ui/react'
 import { css } from '@emotion/react'
 import microCMS from 'data/microcms.json'
 import SocialBtn from 'components/parts/socialBtn'
-import Link from 'next/link'
 import NextPrev from 'components/parts/nextPrev'
 
 const paddingTop = css`
@@ -15,8 +14,10 @@ const paddingTop = css`
 
 
 const Post = ({ postData }) => {
-  const {id, thumbnail, time, title, body, nextSlug, beforeSlug } = postData;
+  const {id, thumbnail, time, title, body, slug, description, nextSlug, beforeSlug } = postData;
   return (
+    <>
+    <SEO title={title} description={description} url={slug} thumbnail={thumbnail} pageType="article" />
     <Layout>
       <Box maxW="620px" m="auto">
       <div key={id}>
@@ -40,6 +41,7 @@ const Post = ({ postData }) => {
       </div>
       </Box>
     </Layout>
+    </>
   );
 }
 

@@ -1,17 +1,9 @@
 import { useState, useEffect } from 'react'
-import Heads from './util/heads'
-import Image from 'next/image'
-import Link from 'next/link'
 import Sidebar from 'components/parts/sidebar'
 import HeaderResponsive from 'components/parts/headerResopnsive'
 import Footer from 'components/parts/footer'
 import { Box, Flex, Grid, useMediaQuery } from "@chakra-ui/react"
-import { PhoneIcon } from "@chakra-ui/icons"
-import { client } from 'lib/clients'
-import useSWR from 'swr'
-import microCMS from 'data/microcms.json'
 import debug from 'debug'
-
 
 const lg = debug('log');
 const name = 'あきふみ'
@@ -33,7 +25,6 @@ const Layout = ({ children }) => {
 
   return (
     <Box m='auto' mt={isThan880 ? '0px' : '80px'} w="100%">
-      <Heads />
       { isThan880 &&
         (
           <Grid gridTemplateColumns="320px 1fr" >
