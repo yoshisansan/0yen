@@ -29,7 +29,7 @@ export const chakraGlobalTheme = extendTheme({
       "html, body": {
         color: "moji.main",
         background: "#fff",
-        lineHeight: "1.4142135623",
+        lineHeight: "1.6180339887",
         fontSize: "base",
         letterSpacing: "0.08em",
         textAlign: "justify",
@@ -38,6 +38,7 @@ export const chakraGlobalTheme = extendTheme({
       },
       a: {
         color: "brand.main",
+        display: "inline",
       },
       h1: {
         color: "moji.main",
