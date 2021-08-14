@@ -3,21 +3,13 @@ import { useContext } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { MicroCMS } from 'components/util/context'
-import { Box, Text, Button, List, ListItem, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon } from '@chakra-ui/react'
+import { Box, Text, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon } from '@chakra-ui/react'
 import { css } from '@emotion/react'
 
 
 const borderList = css`
   position: relative;
   border-left: solid 1px #e0e0e0;
-  /* &:before {
-    content: '';
-    height: 100px;
-    width: 1px;
-    background-color: #e0e0e0;
-    position: absolute;
-    left: 0;
-  } */
 `;
 
 const NavList = ({onClose, isHamburger}) => {
@@ -78,18 +70,6 @@ const NavList = ({onClose, isHamburger}) => {
             )
           })}
     </Accordion>
-
-
-    // <List>
-    //   <ListItem></ListItem>
-    //   {menuData.map((menu, index) => {
-    //     return (
-    //       <ListItem m="8px 0" key={index}>
-    //       {menu.title}
-    //       </ListItem>
-    //     )
-    //   })}
-    // </List>
   )
 };
 export default NavList;

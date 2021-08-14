@@ -8,9 +8,10 @@ import { GetStaticProps } from 'next'
 import { Box, Flex } from '@chakra-ui/react'
 import dayjs from 'dayjs'
 import SocialBtn from 'components/parts/socialBtn'
+import NextPrev from 'components/parts/nextPrev'
 
 const Home: FC<{data: any}> = ({data}) => {
-  const {id, thumbnail, time, title, body } = data;
+  const {id, thumbnail, time, title, body, nextSlug, beforeSlug } = data;
 
   const paddingTop = css`
     padding-top: 8px;
@@ -32,6 +33,7 @@ const Home: FC<{data: any}> = ({data}) => {
             <SocialBtn title={title}/>
           </Flex>
           <Box pt="24px" dangerouslySetInnerHTML={{ __html: body }} />
+          <NextPrev nextSlug={nextSlug} beforeSlug={beforeSlug}/>
           <Flex w="240px" mt="32px" align="center" justify="space-between">
             <SocialBtn title={title} />
           </Flex>
