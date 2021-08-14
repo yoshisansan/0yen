@@ -1,59 +1,53 @@
+/** @jsxImportSource @emotion/react */
 import { FC } from 'react';
 import Head from 'next/head'
-import Layout, { siteTitle } from 'components/layout'
-import { getSortedPostsData } from 'lib/posts'
-import { client } from 'lib/clients'
-import Link from 'next/link'
+import { css } from '@emotion/react'
+import Layout from 'components/layout'
+import microCMS from 'data/microcms.json'
 import { GetStaticProps } from 'next'
-import { Box } from '@chakra-ui/react'
-import debug from 'debug'
+import { Box, Flex } from '@chakra-ui/react'
 import dayjs from 'dayjs'
-const lg = debug('log')
+import SocialBtn from 'components/parts/socialBtn'
 
-const Home: FC<{allPostsData: any, data: any}> = ({ data }) => {
+const Home: FC<{data: any}> = ({data}) => {
+  const {id, thumbnail, time, title, body } = data;
 
-  const posts = data.map((data) => {
-    const { id, title, slug, thumbnail, description, time, body } = data;
-    return (
-      <div key={id}>
-        <div>
-        {thumbnail &&
-          <Link href={slug}>
-            <img src={thumbnail.url} alt="サムネイル" />
-          </Link>
-        }
-          <div>
-            <p>{dayjs(time).format('YYYY年MM月DD日')}</p>
-            <h1>{title}</h1>
-          </div>
-          {/* <p>{description}</p> */}
-          <div dangerouslySetInnerHTML={{ __html: body }} />
-        </div>
-      </div>
-    )
-  }
-  )
+  const paddingTop = css`
+    padding-top: 8px;
+  `;
 
   return (
     <Layout>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
       <Box maxW="620px" m="auto">
-        {posts}
+      <div key={id}>
+        <div>
+          <Box mt="24px">
+            <p>{dayjs(time).format('YYYY年MM月DD日')}</p>
+            <h1 css={paddingTop}>{title}</h1>
+          </Box>
+          <Box>
+            {thumbnail && <img src={thumbnail.url} alt="サムネイル" /> }
+          </Box>
+          <Flex w="240px" mt="8px" align="center" justify="space-between">
+            <SocialBtn title={title}/>
+          </Flex>
+          <Box pt="24px" dangerouslySetInnerHTML={{ __html: body }} />
+          <Flex w="240px" mt="32px" align="center" justify="space-between">
+            <SocialBtn title={title} />
+          </Flex>
+        </div>
+      </div>
       </Box>
     </Layout>
-  )
+  );
 }
 
 export const getStaticProps: GetStaticProps = async() => {
-  const allPostsData = getSortedPostsData();
-  const data = await client.get({ endpoint: "0yen" });
+  const data = microCMS.find(item => item.slug === '0yen');
 
   return {
     props: {
-      allPostsData,
-      data: data.contents,
+      data,
     }
   }
 }

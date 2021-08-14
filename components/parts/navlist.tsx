@@ -21,9 +21,9 @@ const borderList = css`
 `;
 
 const NavList = ({onClose, isHamburger}) => {
-  const { query: { slug } } = useRouter();
-
+  const { query: { slug }, asPath } = useRouter();
   const { microCMSdata } = useContext(MicroCMS);
+
   const parentData = microCMSdata.filter(item => item.isParent === true);
   const accordData = parentData.map((parentData) => {
     const genre = parentData.genre[0];
@@ -36,7 +36,11 @@ const NavList = ({onClose, isHamburger}) => {
 
   // locationの記事のあるアコーディオンのIndexを取得
   const indexNum = accordData.findIndex((parentData) => {
-    const res = parentData.childData.findIndex(childData => childData.slug === slug);
+    const res = parentData.childData.findIndex(childData => {
+      const childSlug = childData.slug === '0yen' ? undefined : childData.slug;
+
+      return childSlug === slug
+    });
     if(res === -1) return false;
 
     return true;
@@ -57,12 +61,14 @@ const NavList = ({onClose, isHamburger}) => {
                 </div>
                 <Box ml="18px" mt="12px" css={borderList} borderLeft="solid 1px #e0e0e0">
                 { parentData.childData.map((child, index) => {
+                  const childSlug = child.slug === '0yen' ? '' : child.slug;
+
                   return (
-                    <AccordionPanel color={ (slug === child.slug ? 'moji.main' : 'moji.sub') } fontWeight={ (slug === child.slug ? 'bold' : 'normal') } key={index} pb={4}>
+                    <AccordionPanel color={ (asPath === `/${childSlug}` ? 'moji.main' : 'moji.sub') } fontWeight={ (asPath === `/${childSlug}` ? 'bold' : 'normal') } key={index} pb={4}>
                       <Box onClick={() => {
                         if(isHamburger) return onClose();
                       }}>
-                        <Link href={child.slug}><Text cursor="pointer">・{child.title}</Text></Link></Box>
+                        <Link href={( childSlug === '' ? '/' : childSlug) }><Text cursor="pointer">・{child.title}</Text></Link></Box>
                     </AccordionPanel>
                   )
                 })
@@ -71,23 +77,6 @@ const NavList = ({onClose, isHamburger}) => {
               </AccordionItem>
             )
           })}
-
-      {/* <AccordionItem>
-        <h2>
-          <AccordionButton>
-            <Box flex="1" textAlign="left">
-              Section 2 title
-            </Box>
-            <AccordionIcon />
-          </AccordionButton>
-        </h2>
-        <AccordionPanel pb={4}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat.
-        </AccordionPanel>
-      </AccordionItem> */}
     </Accordion>
 
 

@@ -50,7 +50,7 @@ const HamburgerMenu = () => {
             </Box>
           </ModalBody>
           <ModalFooter>
-            <Button onClick={onClose}>Close</Button>
+            <Button onClick={onClose}>閉じる</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
