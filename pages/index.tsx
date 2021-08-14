@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { FC } from 'react';
-import Head from 'next/head'
+import SEO from 'components/util/seo'
 import { css } from '@emotion/react'
 import Layout from 'components/layout'
 import microCMS from 'data/microcms.json'
@@ -11,13 +11,15 @@ import SocialBtn from 'components/parts/socialBtn'
 import NextPrev from 'components/parts/nextPrev'
 
 const Home: FC<{data: any}> = ({data}) => {
-  const {id, thumbnail, time, title, body, nextSlug, beforeSlug } = data;
+  const {id, thumbnail, time, title, body, slug, description, nextSlug, beforeSlug } = data;
 
   const paddingTop = css`
     padding-top: 8px;
   `;
 
   return (
+    <>
+    <SEO title={title} description={description} url={slug} thumbnail={thumbnail} pageType="website" />
     <Layout>
       <Box maxW="620px" m="auto">
       <div key={id}>
@@ -41,6 +43,7 @@ const Home: FC<{data: any}> = ({data}) => {
       </div>
       </Box>
     </Layout>
+    </>
   );
 }
 
