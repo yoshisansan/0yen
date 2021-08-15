@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
 import Profile from './profile';
 import NavList from './navlist';
 import {
@@ -28,7 +26,7 @@ const HamburgerMenu = () => {
           <ModalHeader>野良開発のススメ</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <NavList onClose={onClose} isHamburger="true" />
+            <NavList onClose={onClose} isHamburger={true} />
             <Box mt="24px">
               <Profile />
             </Box>

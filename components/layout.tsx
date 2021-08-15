@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { VFC, ReactNode, useState, useEffect } from 'react'
 import Sidebar from 'components/parts/sidebar'
 import HeaderResponsive from 'components/parts/headerResopnsive'
 import Footer from 'components/parts/footer'
@@ -6,7 +6,7 @@ import { Box, Flex, Grid, useMediaQuery } from "@chakra-ui/react"
 
 export const siteTitle = '野良開発のススメ | 最小コストで独学Webサービス開発'
 
-const Layout = ({ children }) => {
+const Layout: VFC<{ children: ReactNode }> = ({ children }) => {
   const [isThan880, setIsThan880] = useState(false)
   const [mq] = useMediaQuery("(min-width: 880px)")
   useEffect(() => {

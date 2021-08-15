@@ -21,7 +21,7 @@ const Sidebar = () => {
         <Profile />
       </Box>
       <Box w="288px" m="auto" mt="16px">
-        <NavList onClose="null" isHamburger={false} />
+        <NavList onClose={() => null} isHamburger={false} />
       </Box>
     </Box>
   )

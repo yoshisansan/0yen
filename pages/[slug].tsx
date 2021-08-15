@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+import { VFC } from 'react'
 import Layout from 'components/layout'
 import SEO from 'components/util/seo'
 import dayjs from 'dayjs'
@@ -7,13 +8,14 @@ import { css } from '@emotion/react'
 import microCMS from 'data/microcms.json'
 import SocialBtn from 'components/parts/socialBtn'
 import NextPrev from 'components/parts/nextPrev'
+import { OnePostData, PostStaticProps } from 'types/postsTypes'
 
 const paddingTop = css`
   padding-top: 8px;
 `;
 
 
-const Post = ({ postData }) => {
+const Post: VFC<{ postData: OnePostData }> = ({ postData }) => {
   const {id, thumbnail, time, title, body, slug, description, nextSlug, beforeSlug } = postData;
   return (
     <>
@@ -32,7 +34,7 @@ const Post = ({ postData }) => {
           <Flex w="240px" mt="8px" align="center" justify="space-between">
             <SocialBtn title={title}/>
           </Flex>
-          <Box pt="24px" dangerouslySetInnerHTML={{ __html: body }} />
+          { body ? <Box pt="24px" dangerouslySetInnerHTML={{ __html: body }} /> : <Box pt="24px">コンテンツは準備中です。</Box> }
           <NextPrev nextSlug={nextSlug} beforeSlug={beforeSlug}/>
           <Flex w="240px" mt="32px" align="center" justify="space-between">
             <SocialBtn title={title} />
@@ -60,7 +62,7 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: PostStaticProps }) {
   const postData = microCMS.find((data) => {
     return data.slug === params.slug
   });
