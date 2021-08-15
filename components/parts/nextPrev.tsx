@@ -43,7 +43,7 @@ const NextPrev: VFC<{ nextSlug: string | undefined; beforeSlug: string | undefin
   return (
     <Flex justify="flex-end" mt="36px" h="30px" align="center">
       {beforeSlug !== undefined ? (
-        <Link passHref href={'/' + (beforeSlug === '0yen' ? '/' : beforeSlug)}>
+        <Link passHref href={'/' + (beforeSlug === '0yen' ? '' : beforeSlug)}>
           <Box cursor="pointer" mr="24px">
             <Text p="0 2px 0 16px" css={prevArrow}>
               {'前のページ'}
