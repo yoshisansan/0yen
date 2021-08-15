@@ -1,6 +1,12 @@
 import { NextSeo } from 'next-seo';
+import { VFC } from 'react';
 
-const SEO = ({title, description, url, thumbnail, pageType, }) => {
+type ThumbNail = {
+  url: string | undefined;
+  height: number;
+  width: number;
+}
+const SEO: VFC<{title: string, description: string | undefined, url: string, thumbnail: ThumbNail | undefined, pageType: string}> = ({title, description, url, thumbnail, pageType, }) => {
   const siteTitle = "野良開発のススメ";
   const subTitle = "お金をかけない独学Webサービス開発";
 
@@ -15,7 +21,7 @@ const SEO = ({title, description, url, thumbnail, pageType, }) => {
       description,
       images: [
         {
-          url: thumbnail,
+          url: thumbnail?.url !== undefined ? thumbnail.url : '',
           width: 800,
           height: 600,
           alt: 'Og Image Alt',

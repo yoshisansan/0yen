@@ -1,12 +1,12 @@
-import { ChakraProvider, extendTheme } from "@chakra-ui/react"
-import { GetStaticProps, GetServerSideProps } from 'next'
-import { client } from 'lib/clients'
+import { VFC } from 'react'
+import { ChakraProvider } from "@chakra-ui/react"
 import { chakraGlobalTheme } from "components/util/chakrGlobalSettings"
 import microCMSdata from 'data/microcms.json'
 import { MicroCMS } from 'components/util/context'
-import NextNprogress from 'nextjs-progressbar';
+import NextNprogress from 'nextjs-progressbar'
+import { AppProps } from 'next/app';
 
-export default function App({ Component, pageProps }) {
+export const App: VFC<AppProps>  = ({ Component, pageProps }) => {
   return (
     <ChakraProvider theme={chakraGlobalTheme}>
       <NextNprogress
@@ -19,3 +19,5 @@ export default function App({ Component, pageProps }) {
     </ChakraProvider>
   );
 }
+
+export default App;
