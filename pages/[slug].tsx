@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Layout from 'components/layout';
 import SEO from 'components/util/seo';
 import dayjs from 'dayjs';
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import { css } from '@emotion/react';
 import microCMS from 'data/microcms.json';
 import SocialBtn from 'components/parts/socialBtn';
