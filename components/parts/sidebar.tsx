@@ -24,7 +24,7 @@ const Sidebar = () => {
         <Profile />
       </Box>
       <Box w="288px" m="auto" mt="16px">
-        <NavList />
+        <NavList onClose="null" isHamburger={false} />
       </Box>
     </Box>
   )

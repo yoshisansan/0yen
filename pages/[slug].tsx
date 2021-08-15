@@ -61,7 +61,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  // const data = await client.get({ endpoint: "0yen" });
   const postData = microCMS.find((data) => {
     return data.slug === params.slug
   });
