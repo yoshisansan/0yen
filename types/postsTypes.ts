@@ -1,4 +1,4 @@
-import microCMS from 'data/microcms.json'
+import microCMS from 'data/microcms.json';
 
 export type MicroCMSType = typeof microCMS;
 export type OnePostData = typeof microCMS[0];
@@ -14,13 +14,13 @@ export interface ParentPostData {
   body: string;
   time: string;
   thumbnail: {
-      url: string;
-      height: number;
-      width: number;
+    url: string;
+    height: number;
+    width: number;
   };
   slug: string;
   genre: string[];
-  isParent : boolean;
+  isParent: boolean;
   beforeSlug?: undefined;
   afterSlug?: undefined;
   childData: OnePostData[];
