@@ -24,7 +24,7 @@ const HeaderResponsive = () => {
         <Link href="/">
         <Flex p={"0 0 0 16px"} h="80px" justify="flex-start" align="center" flexDirection="row" flexWrap="wrap" cursor="pointer">
             <Box pr="8px" display="flex" align="center" lineHeight="80px">
-              <Avatar w={isThan480 ? "60px" : "50px" } h={isThan480 ? "60px" : "50px" } name="あきふみ" src="/images/profile.png" />
+              <Avatar bg="#4B95C2" w={isThan480 ? "60px" : "50px" } h={isThan480 ? "60px" : "50px" } name="あきふみ" src="/images/profile.png" />
             </Box>
             <Box w={isThan480 ? "260px" : "172px" } p="8px 0 4px 0" display="inline-block">
               <Text fontSize={ isThan480 ? 'big' : '18px'} bg="brand.main" display="inline" p="0 8px">{siteTitle}</Text>
