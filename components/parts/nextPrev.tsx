@@ -1,7 +1,8 @@
 /** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
+import { VFC } from 'react'
 import Link from 'next/link'
 import { Box, Flex, Text } from '@chakra-ui/react'
-import { css } from '@emotion/react'
 
 const nextArrow = css`
   position: relative;
@@ -35,7 +36,7 @@ const prevArrow = css`
   }
 `;
 
-const NextPrev = ({nextSlug, beforeSlug}) => {
+const NextPrev: VFC<{nextSlug: string | undefined, beforeSlug: string | undefined}> = ({nextSlug, beforeSlug}) => {
   return (
     <Flex justify="flex-end" mt="36px" h="30px" align="center">
       { beforeSlug !== undefined ? <Link href={beforeSlug}><Box cursor="pointer" mr="24px"><Text p="0 2px 0 16px" css={prevArrow}>{"前のページ"}</Text></Box></Link> : ''}

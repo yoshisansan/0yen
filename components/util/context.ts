@@ -1,4 +1,3 @@
-// import { MicroCMSType } from 'model/type'
 import { createContext } from "react"
 
 type MicroCMSType = {

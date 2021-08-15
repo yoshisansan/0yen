@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
+import { VFC } from 'react'
 import { useRouter } from 'next/router'
 import { CopyToClipboard } from "react-copy-to-clipboard"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -53,8 +54,7 @@ const hatenaIcon = css`
       position: absolute;
     }
 `;
-{/* <a href="" title="Pocket" target="_blank">Pocket</a> */}
-const SocialBtn = ({title}) => {
+const SocialBtn: VFC<{title: string}> = ({title}) => {
   const toast = useToast();
   const { asPath } = useRouter(),
     twitterURL = `https://twiter.com/share?url=http://programm${asPath}&text=${title}&hashtags=野良開発のススメ&related`,

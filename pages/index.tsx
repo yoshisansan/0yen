@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { FC } from 'react';
+import { VFC } from 'react';
 import SEO from 'components/util/seo'
 import { css } from '@emotion/react'
 import Layout from 'components/layout'
@@ -9,8 +9,9 @@ import { Box, Flex } from '@chakra-ui/react'
 import dayjs from 'dayjs'
 import SocialBtn from 'components/parts/socialBtn'
 import NextPrev from 'components/parts/nextPrev'
+import { OnePostData } from 'types/postsTypes'
 
-const Home: FC<{data: any}> = ({data}) => {
+const Home: VFC<{data: OnePostData}> = ({data}) => {
   const {id, thumbnail, time, title, body, slug, description, nextSlug, beforeSlug } = data;
 
   const paddingTop = css`
@@ -34,7 +35,7 @@ const Home: FC<{data: any}> = ({data}) => {
           <Flex w="240px" mt="8px" align="center" justify="space-between">
             <SocialBtn title={title}/>
           </Flex>
-          <Box pt="24px" dangerouslySetInnerHTML={{ __html: body }} />
+          { body ? <Box pt="24px" dangerouslySetInnerHTML={{ __html: body }} /> : <div>コンテンツは準備中です。</div> }
           <NextPrev nextSlug={nextSlug} beforeSlug={beforeSlug}/>
           <Flex w="240px" mt="32px" align="center" justify="space-between">
             <SocialBtn title={title} />

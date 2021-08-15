@@ -1,8 +1,6 @@
 import { Box, Text, Flex } from '@chakra-ui/react'
 import Link from 'next/link'
 
-// ダミーデータ
-const name = 'あきふみ';
 const siteTitle = '野良開発のススメ';
 const subTitle = '~ お金をかけない独学Webサービス開発 ~';
 
