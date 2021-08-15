@@ -14,12 +14,12 @@ const HeaderResponsive = () => {
     if(mq !== isThan480) {
       setIsThan480(mq);
     }
-  },[mq]);
+  },[mq, isThan480]);
 
   return (
     <Box w="100vw" h="80px" bg="#fff" boxShadow="0 0 1px 1px #e0e0e0" position="fixed" top="0" zIndex="1">
       <Flex justify="space-between">
-        <Link href="/">
+        <Link href="/" passHref>
         <Flex p={"0 0 0 16px"} h="80px" justify="flex-start" align="center" flexDirection="row" flexWrap="wrap" cursor="pointer">
             <Box pr="8px" display="flex" align="center" lineHeight="80px">
               <Avatar bg="#4B95C2" w={isThan480 ? "60px" : "50px" } h={isThan480 ? "60px" : "50px" } name="あきふみ" src="/images/profile.png" />

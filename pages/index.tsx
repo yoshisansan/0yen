@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import { VFC } from 'react';
+import { VFC } from 'react'
+import Image from 'next/image'
 import SEO from 'components/util/seo'
 import { css } from '@emotion/react'
 import Layout from 'components/layout'
@@ -30,7 +31,7 @@ const Home: VFC<{data: OnePostData}> = ({data}) => {
             <h1 css={paddingTop}>{title}</h1>
           </Box>
           <Box>
-            {thumbnail && <img src={thumbnail.url} alt="サムネイル" /> }
+          {thumbnail && <Image src={thumbnail.url} alt={`${title}のサムネイル画像`} width="620px" height="190px" objectFit="cover"/> }
           </Box>
           <Flex w="240px" mt="8px" align="center" justify="space-between">
             <SocialBtn title={title}/>

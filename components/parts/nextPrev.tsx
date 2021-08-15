@@ -39,8 +39,8 @@ const prevArrow = css`
 const NextPrev: VFC<{nextSlug: string | undefined, beforeSlug: string | undefined}> = ({nextSlug, beforeSlug}) => {
   return (
     <Flex justify="flex-end" mt="36px" h="30px" align="center">
-      { beforeSlug !== undefined ? <Link href={beforeSlug}><Box cursor="pointer" mr="24px"><Text p="0 2px 0 16px" css={prevArrow}>{"前のページ"}</Text></Box></Link> : ''}
-      { nextSlug !== undefined ? <Link href={nextSlug}><Box cursor="pointer" textAlign="center" bg="brand.mark" boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"><Text css={nextArrow} p="0 16px 0 2px" fontWeight="bold">次のページ</Text></Box></Link> : ''}
+      { beforeSlug !== undefined ? <Link passHref href={beforeSlug}><Box cursor="pointer" mr="24px"><Text p="0 2px 0 16px" css={prevArrow}>{"前のページ"}</Text></Box></Link> : ''}
+      { nextSlug !== undefined ? <Link passHref href={nextSlug}><Box cursor="pointer" textAlign="center" bg="brand.mark" boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"><Text css={nextArrow} p="0 16px 0 2px" fontWeight="bold">次のページ</Text></Box></Link> : ''}
     </Flex>
   );
 };

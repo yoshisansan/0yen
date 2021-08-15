@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { VFC } from 'react'
+import Image from 'next/image'
 import Layout from 'components/layout'
 import SEO from 'components/util/seo'
 import dayjs from 'dayjs'
@@ -13,7 +14,6 @@ import { OnePostData, PostStaticProps } from 'types/postsTypes'
 const paddingTop = css`
   padding-top: 8px;
 `;
-
 
 const Post: VFC<{ postData: OnePostData }> = ({ postData }) => {
   const {id, thumbnail, time, title, body, slug, description, nextSlug, beforeSlug } = postData;
@@ -29,7 +29,7 @@ const Post: VFC<{ postData: OnePostData }> = ({ postData }) => {
             <h1 css={paddingTop}>{title}</h1>
           </Box>
           <Box>
-            {thumbnail && <img src={thumbnail.url} alt="サムネイル" /> }
+            {thumbnail && <Image src={thumbnail.url} alt={`${title}のサムネイル画像`} width="620px" height="190px" objectFit="cover"/> }
           </Box>
           <Flex w="240px" mt="8px" align="center" justify="space-between">
             <SocialBtn title={title}/>

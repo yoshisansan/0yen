@@ -61,7 +61,7 @@ const NavList: VFC<{onClose: () => void, isHamburger: boolean}> = ({onClose, isH
                       <Box onClick={() => {
                         if(isHamburger) return onClose();
                       }}>
-                        <Link href={( childSlug === '' ? '/' : childSlug) }><Text cursor="pointer">・{child.title}</Text></Link></Box>
+                        <Link passHref href={( childSlug === '' ? '/' : childSlug) }><Text cursor="pointer">・{child.title}</Text></Link></Box>
                     </AccordionPanel>
                   )
                 })

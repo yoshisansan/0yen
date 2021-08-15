@@ -11,9 +11,9 @@ const Layout: VFC<{ children: ReactNode }> = ({ children }) => {
   const [mq] = useMediaQuery("(min-width: 880px)")
   useEffect(() => {
     if(mq !== isThan880) {
-      setIsThan880(mq);
+      setIsThan880(() => mq);
     }
-  },[mq]);
+  },[mq, isThan880]);
 
   return (
     <Box m='auto' mt={isThan880 ? '0px' : '80px'} w="100%">
