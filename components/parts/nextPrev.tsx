@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
-import { VFC } from 'react'
-import Link from 'next/link'
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { css } from '@emotion/react';
+import { VFC } from 'react';
+import Link from 'next/link';
+import { Box, Flex, Text } from '@chakra-ui/react';
 
 const nextArrow = css`
   position: relative;
@@ -13,7 +13,7 @@ const nextArrow = css`
     height: 0;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    border-bottom: 8px solid #030D1B;
+    border-bottom: 8px solid #030d1b;
     top: 36%;
     right: 1%;
     transform: rotate(90deg);
@@ -36,11 +36,38 @@ const prevArrow = css`
   }
 `;
 
-const NextPrev: VFC<{nextSlug: string | undefined, beforeSlug: string | undefined}> = ({nextSlug, beforeSlug}) => {
+const NextPrev: VFC<{ nextSlug: string | undefined; beforeSlug: string | undefined }> = ({
+  nextSlug,
+  beforeSlug
+}) => {
   return (
     <Flex justify="flex-end" mt="36px" h="30px" align="center">
-      { beforeSlug !== undefined ? <Link passHref href={beforeSlug}><Box cursor="pointer" mr="24px"><Text p="0 2px 0 16px" css={prevArrow}>{"前のページ"}</Text></Box></Link> : ''}
-      { nextSlug !== undefined ? <Link passHref href={nextSlug}><Box cursor="pointer" textAlign="center" bg="brand.mark" boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"><Text css={nextArrow} p="0 16px 0 2px" fontWeight="bold">次のページ</Text></Box></Link> : ''}
+      {beforeSlug !== undefined ? (
+        <Link passHref href={'/' + (beforeSlug === '0yen' ? '/' : beforeSlug)}>
+          <Box cursor="pointer" mr="24px">
+            <Text p="0 2px 0 16px" css={prevArrow}>
+              {'前のページ'}
+            </Text>
+          </Box>
+        </Link>
+      ) : (
+        ''
+      )}
+      {nextSlug !== undefined ? (
+        <Link passHref href={'/' + nextSlug}>
+          <Box
+            cursor="pointer"
+            textAlign="center"
+            bg="brand.mark"
+            boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px">
+            <Text css={nextArrow} p="0 16px 0 2px" fontWeight="bold">
+              次のページ
+            </Text>
+          </Box>
+        </Link>
+      ) : (
+        ''
+      )}
     </Flex>
   );
 };

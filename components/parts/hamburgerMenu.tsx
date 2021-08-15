@@ -10,16 +10,16 @@ import {
   ModalHeader,
   ModalFooter,
   ModalBody,
-  ModalCloseButton,
-} from "@chakra-ui/react"
-import {HamburgerLine} from './hamburgerIcon'
+  ModalCloseButton
+} from '@chakra-ui/react';
+import { HamburgerLine } from './hamburgerIcon';
 
 const HamburgerMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Box w="32px" h="32px" m="0 16px" cursor="pointer" bg="#fff" position="relative" display="flex">
-      <HamburgerLine onClick={onOpen} isOpenBool={isOpen}/>
+      <HamburgerLine onClick={onOpen} isOpenBool={isOpen} />
       <Modal onClose={onClose} size="full" isOpen={isOpen}>
         <ModalOverlay />
         <ModalContent>

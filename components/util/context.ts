@@ -1,9 +1,9 @@
-import { createContext } from "react"
+import { createContext } from 'react';
 
 type MicroCMSType = {
-  microCMSdata: any
-}
+  microCMSdata: any;
+};
 
 export const MicroCMS = createContext<MicroCMSType>({
-  microCMSdata: null,
+  microCMSdata: null
 });
