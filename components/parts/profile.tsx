@@ -1,20 +1,13 @@
 /** @jsxImportSource @emotion/react */
-import Image from 'next/image'
 import { css } from '@emotion/react'
 import Link from 'next/link'
-import { Box, Text, Avatar, Flex } from '@chakra-ui/react'
+import { Box, Text, Avatar } from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 
-const imageRadius = css`
-  border-radius: 50%;
-`;
 const marginAutoCss = css`
   margin: 0 auto;
 `;
-
-const name = 'あきふみ'
-const siteTitle = '野良開発のススメ | 最小コストで独学Webサービス開発'
 
 const Profile = () => {
   return (

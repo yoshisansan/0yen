@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
 import Link from 'next/link'
 import { Box, Flex, Text } from '@chakra-ui/react'
-import { css } from '@emotion/react'
 
 const nextArrow = css`
   position: relative;

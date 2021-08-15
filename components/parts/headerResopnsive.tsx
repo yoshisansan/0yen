@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Box, Text, Flex, useMediaQuery } from '@chakra-ui/react'
-import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react"
+import { Avatar } from "@chakra-ui/react"
 import HamburgerMenu from './hamburgerMenu'
 import Link from 'next/link'
 
-// ダミーデータ
-const name = 'あきふみ';
 const siteTitle = '野良開発のススメ';
 const subTitle = '~ お金をかけない独学Webサービス開発 ~';
 

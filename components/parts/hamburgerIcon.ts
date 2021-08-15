@@ -1,8 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { Box, Button, Text, Flex } from '@chakra-ui/react'
-import { css } from '@emotion/react'
 import styled from '@emotion/styled'
-import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react"
 
 type HamburgerLineType = {
   isOpenBool: boolean;

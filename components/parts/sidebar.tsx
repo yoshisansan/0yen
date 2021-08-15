@@ -13,9 +13,6 @@ const hiddenOverflowScroll = css`
   }
 `;
 
-// Propsダミデータ
-const title = ''
-
 const Sidebar = () => {
   return (
     <Box borderRight="main" h="100vh" w="320px" bg="#fff" overflowY="auto" position="fixed" zIndex="1" css={hiddenOverflowScroll}>
