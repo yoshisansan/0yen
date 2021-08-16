@@ -25,7 +25,6 @@ const Home: VFC<{ data: OnePostData }> = ({ data }) => {
         title={title}
         description={description}
         url={slug}
-        thumbnail={thumbnail}
         pageType="website"
       />
       <Layout>

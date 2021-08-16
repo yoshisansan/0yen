@@ -23,7 +23,6 @@ const Post: VFC<{ postData: OnePostData }> = ({ postData }) => {
         title={title}
         description={description}
         url={slug}
-        thumbnail={thumbnail}
         pageType="article"
       />
       <Layout>
