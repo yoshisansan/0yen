@@ -27,7 +27,7 @@ const SEO: VFC<{
           type: pageType,
           images: [
             {
-              url: 'images/nora-dev.png',
+              url: 'https://nora-dev.com/images/nora-dev.png',
               width: 1200,
               height: 630,
               alt: `野良開発のススメ画像`
