@@ -54,10 +54,10 @@ const hatenaIcon = css`
 const SocialBtn: VFC<{ title: string }> = ({ title }) => {
   const toast = useToast();
   const { asPath } = useRouter(),
-    twitterURL = `https://twiter.com/share?url=http://programm${asPath}&text=${title}&hashtags=野良開発のススメ&related`,
-    facebookURL = `https://www.facebook.com/share.php?u=${asPath}`,
-    pocketURL = `https://getpocket.com/edit?url=${asPath}&title=${title}`,
-    hatenaURL = `https://b.hatena.ne.jp/add?mode=confirm&url=${asPath}`;
+    twitterURL = `https://twiter.com/share?url=https://nora-dev.com${asPath}&text=${title}&hashtags=野良開発のススメ&related`,
+    facebookURL = `https://www.facebook.com/share.php?u=https://nora-dev.com${asPath}`,
+    pocketURL = `https://getpocket.com/edit?url=https://nora-dev.com${asPath}&title=${title}`,
+    hatenaURL = `https://b.hatena.ne.jp/add?mode=confirm&url=https://nora-dev.com${asPath}`;
 
   return (
     <>

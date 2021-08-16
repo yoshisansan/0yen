@@ -1,20 +1,19 @@
 import { NextSeo } from 'next-seo';
 import { VFC } from 'react';
 
-type ThumbNail = {
-  url: string | undefined;
-  height: number;
-  width: number;
-};
+// type ThumbNail = {
+//   url: string | undefined;
+//   height: number;
+//   width: number;
+// };
 const SEO: VFC<{
   title: string;
   description: string | undefined;
   url: string;
-  thumbnail: ThumbNail | undefined;
   pageType: string;
-}> = ({ title, description, url, thumbnail, pageType }) => {
+}> = ({ title, description, url, pageType }) => {
   const siteTitle = '野良開発のススメ';
-  const subTitle = 'お金をかけない独学Webサービス開発';
+  // const subTitle = 'お金をかけない独学Webサービス開発';
 
   return (
     <>
@@ -25,20 +24,14 @@ const SEO: VFC<{
           url,
           title,
           description,
+          type: pageType,
           images: [
             {
-              url: thumbnail?.url !== undefined ? thumbnail.url : '',
-              width: 800,
-              height: 600,
-              alt: 'Og Image Alt'
-            },
-            {
-              url: '',
-              width: 900,
-              height: 800,
-              alt: 'Og Image Alt Second'
-            },
-            { url: 'https://www.example.ie/og-image-03.jpg' }
+              url: 'images/nora-dev.png',
+              width: 1200,
+              height: 630,
+              alt: `野良開発のススメ画像`
+            }
           ],
           site_name: siteTitle
         }}

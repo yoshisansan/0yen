@@ -23,7 +23,7 @@ const Profile = () => {
         <Avatar bg="#4B95C2" w="80px" h="80px" name="あきふみ" src="/images/profile.png" />
       </Box>
       <Box m="0 auto">
-        <div>
+        <Box mt="8px">
           <Text textAlign="center" color="moji.sub">{`あきふみ＠海外個人開発(タイ)`}</Text>
           <Text m="16px 0">
             Webサービスを作りたくて独学でフロントエンド開発に集中して２年の開発者（事業を目指している）
@@ -45,7 +45,7 @@ const Profile = () => {
               で技術記事書いています
             </Text>
           </Text>
-        </div>
+        </Box>
         <Link href="https://twitter.com/akifumiyoshimu" passHref>
           <Box m="auto">
             <FontAwesomeIcon
