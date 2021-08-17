@@ -74,7 +74,7 @@ const SocialBtn: VFC<{ title: string }> = ({ title }) => {
       <a href={hatenaURL} css={boxNeumorphism} target="_blank" rel="nofollow noopener noreferrer">
         <Box css={hatenaIcon} m="0 auto"></Box>
       </a>
-      <CopyToClipboard text={asPath}>
+      <CopyToClipboard text={url}>
         <Button
           borderRadius="0"
           p="0"
@@ -86,7 +86,6 @@ const SocialBtn: VFC<{ title: string }> = ({ title }) => {
               duration: 2000,
               isClosable: true
             });
-            document.execCommand('url');
           }}>
           <FontAwesomeIcon css={marginAutoCss} color="#4B95C2" width={24} icon={faCopy} />
         </Button>
