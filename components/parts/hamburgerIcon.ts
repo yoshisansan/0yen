@@ -11,6 +11,9 @@ export const HamburgerLine = styled.div<HamburgerLineType>`
   opacity: 1;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
+  @media screen and (max-width: 480px) {
+    width: 80%;
+  }
   &:before {
     position: absolute;
     background: #030d1b;
