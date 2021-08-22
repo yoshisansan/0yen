@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "sitemap": "next-sitemap",
     "format": "prettier --write ./**/*.{js,jsx,ts,tsx} ./**/**/*.{js,jsx,ts,tsx} --config ./.prettierrc"
   },
   "dependencies": {
@@ -42,6 +43,7 @@
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.1.0",
     "microcms-js-sdk": "^1.2.0",
+    "next-sitemap": "^1.6.162",
     "prettier": "^2.3.2",
     "typescript": "^4.3.5"
   }

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://nora-dev.com
+
+# Sitemaps
+Sitemap: https://nora-dev.com/sitemap.xml
