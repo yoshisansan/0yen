@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://nora-dev.com</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-19T17:24:09.061Z</lastmod></url>
+<url><loc>https://nora-dev.com</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-22T11:22:00.955Z</lastmod></url>
+<url><loc>https://nora-dev.com/enjoy</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-22T11:22:00.956Z</lastmod></url>
+<url><loc>https://nora-dev.com/school</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-22T11:22:00.956Z</lastmod></url>
+<url><loc>https://nora-dev.com/power</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-22T11:22:00.956Z</lastmod></url>
+<url><loc>https://nora-dev.com/about</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-22T11:22:00.956Z</lastmod></url>
+<url><loc>https://nora-dev.com/learn-site</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-22T11:22:00.956Z</lastmod></url>
+<url><loc>https://nora-dev.com/howto</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-22T11:22:00.956Z</lastmod></url>
+<url><loc>https://nora-dev.com/portofolio</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-22T11:22:00.956Z</lastmod></url>
+<url><loc>https://nora-dev.com/en</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-22T11:22:00.956Z</lastmod></url>
+<url><loc>https://nora-dev.com/goal</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-22T11:22:00.956Z</lastmod></url>
+<url><loc>https://nora-dev.com/0yen</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-08-22T11:22:00.956Z</lastmod></url>
 </urlset>

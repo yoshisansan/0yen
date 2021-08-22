@@ -1,5 +1,6 @@
-import { NextSeo } from 'next-seo';
-import { VFC } from 'react';
+import Head from 'next/head'
+import { NextSeo } from 'next-seo'
+import { VFC } from 'react'
 
 // type ThumbNail = {
 //   url: string | undefined;
@@ -17,6 +18,24 @@ const SEO: VFC<{
 
   return (
     <>
+      <Head>
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+          page_path: window.location.pathname,
+        });
+      `,
+        }}
+      />
+      </Head>
       <NextSeo
         title={title}
         description={description}
@@ -50,22 +69,6 @@ const SEO: VFC<{
             sizes: '76x76'
           }
         ]}
-      />
-      <script
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-      />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
-          page_path: window.location.pathname,
-        });
-      `,
-        }}
       />
     </>
   );
