@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "node ./data/create/createCMSdata.js && next dev",
-    "build": "next build",
+    "build": "next build && next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "sitemap": "next-sitemap",
@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^11.1.0",
+    "@types/gtag.js": "^0.0.7",
     "@types/node": "^16.4.8",
     "@types/react": "^17.0.15",
     "debug": "^4.3.2",
