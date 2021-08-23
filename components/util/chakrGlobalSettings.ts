@@ -62,6 +62,13 @@ export const chakraGlobalTheme = extendTheme({
         fontSize: '20px',
         fontWeight: 'bold',
         padding: '0.7071067812em 0em'
+      },
+      blockquote: {
+        background: '#f0fcff',
+        padding: '20px',
+        margin: '16px 0',
+        boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px',
+        lineHeight: '1.8180339887',
       }
     }
   }
