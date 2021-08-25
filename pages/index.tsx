@@ -43,6 +43,8 @@ const Home: VFC<{ data: OnePostData }> = ({ data }) => {
                     width="620px"
                     height="190px"
                     objectFit="cover"
+                    blurDataURL="data:..."
+                    placeholder="blur"
                   />
                 )}
               </Box>
