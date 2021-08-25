@@ -41,6 +41,8 @@ const Post: VFC<{ postData: OnePostData }> = ({ postData }) => {
                     width="620px"
                     height="190px"
                     objectFit="cover"
+                    blurDataURL="data:..."
+                    placeholder="blur"
                   />
                 )}
               </Box>
